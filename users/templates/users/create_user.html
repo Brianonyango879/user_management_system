@@ -1,0 +1,40 @@
+{% extends 'users/base.html' %}
+{% block content %}
+<h2>Create User</h2>
+<div class="card-body"
+     style=" margin: auto;padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 10px #ccc; width: 70rem; ">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <div style="margin-bottom: 10px;">
+                {{form.username.label_tag}}
+                {{form.username}}
+                {{form.username.errors}}
+            </div>
+            <div style="margin-bottom: 10px; width: 30rem;">
+                {{form.email.label_tag}}
+                {{form.email}}
+                {{form.email.errors}}
+            </div>
+            <div style="margin-bottom: 10px;">
+                {{form.first_name.label_tag}}
+                {{form.first_name}}
+                {{form.first_name.errors}}
+            </div>
+            <div style="margin-bottom: 10px;">
+                {{form.last_name.label_tag}}
+                {{form.last_name}}
+                {{form.last_name.errors}}
+            </div>
+            <div style="margin-bottom: 10px;">
+                {{form.password.label_tag}}
+                {{ form.password}}
+            </div>
+        </div>
+    </form>
+    <div class="card-footer"
+         style="text-align: center; margin-top: 10px; border-top: 1px solid #A9977C; padding: 10px; border-radius: 0 0 5px 5px;">
+        <button type="submit" class="btn btn-success" style="background-color: #A9977C">Create</button>
+    </div>
+</div>
+{% endblock %}

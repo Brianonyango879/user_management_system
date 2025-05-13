@@ -1,0 +1,35 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+<h2>All Users</h2>
+<table style="width: 100%; border: 1px solid #ccc; border-collapse: collapse; margin-top: 10px; border-radius: 5px; box-shadow: 0 0 10px #ccc;">
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Actions</th>
+    </tr>
+    {% for user in users %}
+    <tr style="border: 1px solid #ccc; border-collapse: collapse;">
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.first_name }}</td>
+        <td>{{ user.last_name }}</td>
+        <td>
+            <button style="background-color: #A9977C; margin-right: 10px; margin-bottom: 10px; border-radius: 5px;">
+                <a href="{% url 'update_user' user.id %}" style="text-decoration: none">Update</a>
+            </button>
+            <button style="background-color: #A9977C; margin-right: 10px; margin-bottom: 10px; border-radius: 5px;">
+                <a href="{% url 'change_password' user.id %}" style="text-decoration: none">Change Password</a>
+            </button>
+            <button style="background-color: #A9977C; margin-right: 10px; margin-bottom: 10px; border-radius: 5px;">
+                <a href="{% url 'delete_user' user.id %}" style="text-decoration: none">Delete</a>
+            </button>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

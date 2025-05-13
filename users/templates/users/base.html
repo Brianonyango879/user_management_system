@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    {% load static %}
+    <style>
+        body {
+            background-color: #875B4A;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Arial', sans-serif;
+            background-size: cover; /* Make the image cover the entire background */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-attachment: fixed; /* Fix the background for a parallax effect */
+            color: white;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            background-color: #A9977C;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            background-color: white;
+        }
+
+        hr {
+            border: 1px solid white;
+        }
+
+        a {
+            color: white;
+        }
+
+        a:hover {
+            color: #000000;
+        }
+
+
+        form {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: black;
+            width: 50%;
+            text-align: center;
+            margin: auto;
+
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+<h1>User Management System</h1>
+<nav>
+    <a href="{% url 'create_user' %}">Create User</a>
+    <a href="{% url 'user_list' %}">User List</a>
+</nav>
+<hr>
+{% if messages %}
+{% for message in messages %}
+<p style="color:green;">{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% block content %}
+{% endblock %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+</html>
