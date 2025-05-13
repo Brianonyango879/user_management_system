@@ -19,13 +19,13 @@
         <td>{{ user.first_name }}</td>
         <td>{{ user.last_name }}</td>
         <td>
-            <button style="background-color: #A9977C; margin-right: 10px; margin-bottom: 10px; border-radius: 5px;">
+            <button style="background-color: #A9977C; margin-right: 10px; margin-bottom: 10px; border-radius: 5px; border-color: #A9977C; margin-top: 10px">
                 <a href="{% url 'update_user' user.id %}" style="text-decoration: none">Update</a>
             </button>
-            <button style="background-color: #A9977C; margin-right: 10px; margin-bottom: 10px; border-radius: 5px;">
+            <button style="background-color: #A9977C; margin-right: 10px; margin-bottom: 10px; border-radius: 5px; border-color: #A9977C; margin-top: 10px">
                 <a href="{% url 'change_password' user.id %}" style="text-decoration: none">Change Password</a>
             </button>
-            <button style="background-color: #A9977C; margin-right: 10px; margin-bottom: 10px; border-radius: 5px;">
+            <button style="background-color: #A9977C; margin-right: 10px; margin-bottom: 10px; border-radius: 5px; border-color: #A9977C; margin-top: 10px">
                 <a href="{% url 'delete_user' user.id %}" style="text-decoration: none">Delete</a>
             </button>
         </td>
